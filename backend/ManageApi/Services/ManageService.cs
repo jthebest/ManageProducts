@@ -1,9 +1,10 @@
+// Services/ManageService.cs
 using ManageApi.Data;
 using ManageApi.Interfaces;
 using ManageApi.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ManageApi.Services
@@ -17,52 +18,37 @@ namespace ManageApi.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Manage>> GetManagesAsync()
+        public async Task<IEnumerable<Manage>> GetManages()
         {
             return await _context.Manages.ToListAsync();
         }
 
-        public async Task<Manage> GetManageByIdAsync(int id)
+        public async Task<Manage> GetManage(long id)
         {
             return await _context.Manages.FindAsync(id);
         }
 
-        public async Task<Manage> CreateManageAsync(Manage manage)
+        public async Task<Manage> CreateManage(Manage manage)
         {
             _context.Manages.Add(manage);
             await _context.SaveChangesAsync();
             return manage;
         }
 
-        public async Task<bool> UpdateManageAsync(int id, Manage manage)
+        public async Task UpdateManage(long id, Manage manage)
         {
-            if (id != manage.Id)
-                return false;
-
             _context.Entry(manage).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                return false;
-            }
+            await _context.SaveChangesAsync();
         }
 
-        public async Task<bool> DeleteManageAsync(int id)
+        public async Task DeleteManage(long id)
         {
             var manage = await _context.Manages.FindAsync(id);
-            if (manage == null)
-                return false;
-
-            _context.Manages.Remove(manage);
-            await _context.SaveChangesAsync();
-            return true;
+            if (manage != null)
+            {
+                _context.Manages.Remove(manage);
+                await _context.SaveChangesAsync();
+            }
         }
-
-        // Add additional methods as needed for managing manages
     }
 }

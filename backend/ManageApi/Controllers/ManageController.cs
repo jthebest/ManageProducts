@@ -1,10 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using ManageApi.Data;
+using ManageApi.Interfaces;
 using ManageApi.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ManageApi.Controllers
 {
@@ -12,18 +10,18 @@ namespace ManageApi.Controllers
     [ApiController]
     public class ManageController : ControllerBase
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IManageService _manageService;
 
-        public ManageController(ApplicationDbContext context)
+        public ManageController(IManageService manageService)
         {
-            _context = context;
+            _manageService = manageService;
         }
 
         // GET: api/manages
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Manage>>> GetManages()
         {
-            var manages = await _context.Manages.ToListAsync();
+            var manages = await _manageService.GetManages();
             return Ok(manages);
         }
 
@@ -31,7 +29,7 @@ namespace ManageApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Manage>> GetManage(long id)
         {
-            var manage = await _context.Manages.FindAsync(id);
+            var manage = await _manageService.GetManage(id);
 
             if (manage == null)
             {
@@ -45,10 +43,8 @@ namespace ManageApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Manage>> CreateManage(Manage manage)
         {
-            _context.Manages.Add(manage);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetManage), new { id = manage.Id }, manage);
+            var createdManage = await _manageService.CreateManage(manage);
+            return CreatedAtAction(nameof(GetManage), new { id = createdManage.Id }, createdManage);
         }
 
         // PUT: api/manages/5
@@ -60,23 +56,7 @@ namespace ManageApi.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(manage).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ManageExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            await _manageService.UpdateManage(id, manage);
 
             return NoContent();
         }
@@ -85,21 +65,9 @@ namespace ManageApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteManage(long id)
         {
-            var manage = await _context.Manages.FindAsync(id);
-            if (manage == null)
-            {
-                return NotFound();
-            }
-
-            _context.Manages.Remove(manage);
-            await _context.SaveChangesAsync();
+            await _manageService.DeleteManage(id);
 
             return NoContent();
-        }
-
-        private bool ManageExists(long id)
-        {
-            return _context.Manages.Any(e => e.Id == id);
         }
     }
 }

@@ -1,3 +1,4 @@
+// Interfaces/ImanageService.cs
 using ManageApi.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -6,10 +7,10 @@ namespace ManageApi.Interfaces
 {
     public interface IManageService
     {
-        Task<IEnumerable<Manage>> GetManagesAsync();
-        Task<Manage> GetManageByIdAsync(int id);
-        Task<Manage> CreateManageAsync(Manage manage);
-        Task<bool> UpdateManageAsync(int id, Manage manage);
-        Task<bool> DeleteManageAsync(int id);
+        Task<IEnumerable<Manage>> GetManages();
+        Task<Manage> GetManage(long id);
+        Task<Manage> CreateManage(Manage manage);
+        Task UpdateManage(long id, Manage manage);
+        Task DeleteManage(long id);
     }
 }

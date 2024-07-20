@@ -1,10 +1,14 @@
+// Startup.cs
+
+using ManageApi.Data;
+using ManageApi.Interfaces;
+using ManageApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using ManageApi.Data;
 using Microsoft.OpenApi.Models;
 
 namespace ManageApi
@@ -23,6 +27,9 @@ namespace ManageApi
             // Configure DbContext
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 0))));
+
+            // Register services
+            services.AddScoped<IManageService, ManageService>();
 
             // Register Swagger
             services.AddSwaggerGen(c =>
