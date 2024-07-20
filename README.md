@@ -65,5 +65,5 @@ Manage Product App is a full-stack application for managing products, consisting
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/jthebest/ManageProductApp.git
+   git clone https://github.com/jthebest/ManageProducts.git
    cd ManageProductApp
