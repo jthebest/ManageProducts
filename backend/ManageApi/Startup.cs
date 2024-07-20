@@ -1,5 +1,4 @@
 // Startup.cs
-
 using ManageApi.Data;
 using ManageApi.Interfaces;
 using ManageApi.Services;
@@ -29,7 +28,9 @@ namespace ManageApi
                 options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8, 0, 0))));
 
             // Register services
+            services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IManageService, ManageService>();
+
 
             // Register Swagger
             services.AddSwaggerGen(c =>
