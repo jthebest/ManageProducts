@@ -1,0 +1,17 @@
+<!-- Updated filter.component.html -->
+<div class="filter-container">
+  <label class="filter-label">Filter by Manage:</label>
+  <select class="filter-select form-control" [(ngModel)]="selectedManage" (change)="filterProductsByManage()">
+    <option [ngValue]="null">All Manages</option>
+    <option *ngFor="let Manage of manages" [ngValue]="Manage">{{ Manage.name }}</option>
+  </select>
+</div>
+
+<div *ngIf="filteredProducts && filteredProducts.length > 0" class="mt-3">
+  <h2>Filtered Products</h2>
+  <ul class="list-group">
+    <li *ngFor="let Product of filteredProducts" class="list-group-item">
+      {{ Product.title }}
+    </li>
+  </ul>
+</div>

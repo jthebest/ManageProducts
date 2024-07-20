@@ -1,0 +1,10 @@
+<!-- Updated manage-detail.component.html -->
+<div class="container">
+  <form (submit)="saveManage()" class="form-group">
+    <div class="mb-3">
+      <label for="ManageName" class="form-label">Name:</label>
+      <input type="text" id="ManageName" required placeholder="Enter Manage name" [(ngModel)]="currentManage.name" name="name" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">{{ isNew ? 'Create' : 'Save' }}</button>
+  </form>
+</div>

@@ -1,0 +1,90 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node Angular
+frontend/node_modules
+frontend/npm-debug.log
+frontend/yarn-error.log
+frontend/typings
+frontend/jspm_packages
+frontend/bower_components
+frontend/src/app/**/*.js
+frontend//src/app/**/*.map
+frontend/.vscode/*
+frontend/.angular/*
+frontend/dist
+
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+.nx/cache
+.nx/workspace-data
+
+# . net Core
+backend/*.suo
+backend/*.backup
+backend/*.user
+backend/*.dbmdl
+backend/*.pptx
+backend/*.psess
+backend/*.orig
+backend/*.xml
+backend/*.~vsd
+backend/*.zip
+backend/*.sublime-project
+backend/*.sublime-workspace
+backend/*.exe
+backend/*.avi
+backend/*.mp4
+backend/*.mov
+backend/*.rar
+backend/*.mdf
+backend/*.ldf
+backend/**/nuspec.list
+backend/**/packages/
+backend/**/.sass-cache/
+backend/**/node_modules/
+backend/**/bower_components/
+backend/*/Performance/*TestResults.txt
+backend/**/bin
+backend/**/obj
+backend/**/*.log.1
+backend/**/*.log.*
+backend/*.log
+backend/*.db
+backend/.vs/
+backend/Publish/
+backend/

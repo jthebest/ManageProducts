@@ -1,0 +1,18 @@
+<div class="Product-list container">
+  <div class="row g-0 text-center nav-underline">
+    <h3>List Products</h3>
+  </div>
+  <div class="row">
+    <div *ngFor="let product of Products" class="col-12 col-md-6 col-lg-4 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">{{ product.title }}</h3>
+          <p class="card-text">Product content: {{ product.content }}</p>
+          <p>Manage: {{ product.manage?.name ?? 'No Manager Assigned' }}</p>
+          <button *ngIf="!product.archived && product.id !== null && product.id !== undefined" (click)="archiveProduct(product.id)" class="btn btn-primary">Managed</button>
+          <button *ngIf="product.archived && product.id !== null && product.id !== undefined" (click)="unarchiveProduct(product.id)" class="btn btn-secondary">Unmanaged</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

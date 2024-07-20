@@ -1,0 +1,55 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> AMADEUS </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+
+        <a class="nav-item"  [routerLink]="['/manages']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> Manages</a>
+
+        <a class="nav-link"  [routerLink]="['/manages/new']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">New Manage</a>
+
+
+        <a class="nav-link" [routerLink]="['/products']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> Products</a>
+    
+
+        <a class="nav-link" [routerLink]="['/products/new']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">New Product</a>
+ 
+
+        <a class="nav-link" [routerLink]="['/filter']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Filter </a>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 offset-md-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 offset-md-3"></div>
+      <div class="col-md-3 offset-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3"></div>
+    </div>
+  </div>
+  <div class="card text-center">
+    <div class="card-header">
+      LATAM CDS
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Web Application Manage Products </h5>
+      <p class="card-text">Web Responsive application with boostrap, CRUD Api .net Core, .net Framework, Entity, Angular, Boostrap, Swagger, Clean Architecture and Git</p>
+      <a href="#" class="btn btn-primary">Git repository</a>
+    </div>
+    <div class="card-footer text-body-secondary">
+      19/07/2024 
+    </div>
+  </div>
+</div>

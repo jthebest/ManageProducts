@@ -1,0 +1,21 @@
+/* Updated Manage-list.component.css */
+.Manage-container {
+    margin-bottom: 1.5rem; /* Bootstrap's spacing scale */
+  }
+  
+  .Manage-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: .25rem; /* Bootstrap's border-radius */
+    padding: .5rem; /* Bootstrap's spacing scale */
+    margin-bottom: .5rem; /* Bootstrap's spacing scale */
+  }
+  
+  .Manage-actions {
+    margin-top: .5rem; /* Bootstrap's spacing scale */
+  }
+  
+  .Manage-actions button {
+    margin-right: .25rem; /* Bootstrap's spacing scale */
+  }
+  

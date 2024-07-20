@@ -1,0 +1,18 @@
+<!-- Updated Manage-list.component.html -->
+<div class="container">
+  <div class="row g-0 text-center nav-underline">
+    <h3>List Manage</h3>
+  </div>
+  <div class="row">
+    <ul class="list-group col-12">
+      <li *ngFor="let Manage of manages" class="list-group-item">
+        <div class="Manage-item">
+          <h3>{{ Manage.name }}</h3>
+          <div class="Manage-actions">
+            <!-- Add any buttons or actions here -->
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
