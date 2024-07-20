@@ -71,7 +71,7 @@ CREATE TABLE `PRODUCT` (
 INSERT INTO `PRODUCT` (`id`, `title`, `content`, `update_time`, `archived`, `manage_id`) VALUES
 (2, 'ASD', 'ASDF', NULL, 0, 1),
 (16, 'string', 'string', '2024-07-19 19:42:42', 0, 2),
-(17, 'Proces', 'proces', NULL, 0, NULL),
+(17, 'Proces', 'proces', NULL, 0, 2),
 (18, 'hhh', 'hhh', NULL, 0, 2),
 (19, 'aaaa', 'aaaa', NULL, 0, 3);
 
