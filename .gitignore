@@ -15,9 +15,9 @@ frontend/jspm_packages
 frontend/bower_components
 frontend/src/app/**/*.js
 frontend//src/app/**/*.map
-frontend/.vscode/*
 frontend/.angular/*
-frontend/dist
+frontend/.vscode/*
+frontend/dis
 
 
 # IDEs and editors
@@ -53,38 +53,38 @@ Thumbs.db
 .nx/cache
 .nx/workspace-data
 
-# . net Core
-backend/*.suo
-backend/*.backup
-backend/*.user
-backend/*.dbmdl
-backend/*.pptx
-backend/*.psess
-backend/*.orig
-backend/*.xml
-backend/*.~vsd
-backend/*.zip
-backend/*.sublime-project
-backend/*.sublime-workspace
-backend/*.exe
-backend/*.avi
-backend/*.mp4
-backend/*.mov
-backend/*.rar
-backend/*.mdf
-backend/*.ldf
-backend/**/nuspec.list
-backend/**/packages/
-backend/**/.sass-cache/
-backend/**/node_modules/
-backend/**/bower_components/
-backend/*/Performance/*TestResults.txt
-backend/**/bin
-backend/**/obj
-backend/**/*.log.1
-backend/**/*.log.*
-backend/*.log
-backend/*.db
-backend/.vs/
-backend/Publish/
-backend/
+# . net ManageApi/Core
+backend/ManageApi/*.suo
+backend/ManageApi/*.backup
+backend/ManageApi/*.user
+backend/ManageApi/*.dbmdl
+backend/ManageApi/*.pptx
+backend/ManageApi/*.psess
+backend/ManageApi/*.orig
+backend/ManageApi/*.xml
+backend/ManageApi/*.~vsd
+backend/ManageApi/*.zip
+backend/ManageApi/*.sublime-project
+backend/ManageApi/*.sublime-workspace
+backend/ManageApi/*.exe
+backend/ManageApi/*.avi
+backend/ManageApi/*.mp4
+backend/ManageApi/*.mov
+backend/ManageApi/*.rar
+backend/ManageApi/*.mdf
+backend/ManageApi/*.ldf
+backend/ManageApi/**/nuspec.list
+backend/ManageApi/**/packages/
+backend/ManageApi/**/.sass-cache/
+backend/ManageApi/**/node_modules/
+backend/ManageApi/**/bower_components/
+backend/ManageApi/*/Performance/*TestResults.txt
+backend/ManageApi/**/bin
+backend/ManageApi/**/obj
+backend/ManageApi/**/*.log.1
+backend/ManageApi/**/*.log.*
+backend/ManageApi/*.log
+backend/ManageApi/*.db
+backend/ManageApi/.vs/
+backend/ManageApi/Publish/
+backend/ManageApi/bin/*
